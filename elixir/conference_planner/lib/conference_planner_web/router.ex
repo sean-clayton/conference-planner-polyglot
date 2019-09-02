@@ -12,5 +12,6 @@ defmodule ConferencePlannerWeb.Router do
     resources "/attendees", AttendeeController, except: [:new, :edit]
     resources "/speakers", SpeakerController, except: [:new, :edit]
     resources "/tracks", TrackController, except: [:new, :edit]
+    resources "/conference_sessions", SessionController, except: [:new, :edit]
   end
 end
