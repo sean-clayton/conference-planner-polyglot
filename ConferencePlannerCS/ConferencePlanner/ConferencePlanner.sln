@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConferencePlanner", "ConferencePlanner.csproj", "{C8580ACC-8C8B-4C77-B111-7D91D189A45D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConferenceDTO", "ConferenceDTO\ConferenceDTO.csproj", "{9B08EE64-138D-4E22-B89D-E41A0636AAE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8580ACC-8C8B-4C77-B111-7D91D189A45D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8580ACC-8C8B-4C77-B111-7D91D189A45D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8580ACC-8C8B-4C77-B111-7D91D189A45D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8580ACC-8C8B-4C77-B111-7D91D189A45D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B08EE64-138D-4E22-B89D-E41A0636AAE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B08EE64-138D-4E22-B89D-E41A0636AAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B08EE64-138D-4E22-B89D-E41A0636AAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B08EE64-138D-4E22-B89D-E41A0636AAE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
