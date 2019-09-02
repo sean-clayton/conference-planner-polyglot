@@ -13,7 +13,7 @@ config :conference_planner,
 config :conference_planner, ConferencePlanner.Repo,
   username: "postgres",
   password: "postgres",
-  database: "ConferencePlanner",
+  database: "conference_planner_elixir",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10

@@ -9,5 +9,6 @@ defmodule ConferencePlannerWeb.Router do
     pipe_through :api
 
     resources "/conferences", ConferenceController, except: [:new, :edit]
+    resources "/attendees", AttendeeController, except: [:new, :edit]
   end
 end
