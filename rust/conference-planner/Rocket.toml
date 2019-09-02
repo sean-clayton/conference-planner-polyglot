@@ -1,0 +1,6 @@
+[global]
+address = "localhost"
+port = 3001
+
+[global.databases]
+rustydb = { url = "postgres://postgres:postgres@localhost/ConferencePlanner" }
