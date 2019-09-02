@@ -11,22 +11,22 @@ namespace ConferencePlanner.Controllers {
   [Route ("api/[controller]")]
   [ApiController]
   public class SpeakersController : ControllerBase {
-    private readonly ApplicationDbContext _context;
+    private readonly ApplicationDbContext _db;
 
     public SpeakersController (ApplicationDbContext context) {
-      _context = context;
+      _db = context;
     }
 
     // GET: api/Speakers
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Speaker>>> GetSpeakers () {
-      return await _context.Speakers.ToListAsync ();
+      return await _db.Speakers.ToListAsync ();
     }
 
     // GET: api/Speakers/5
     [HttpGet ("{id}")]
     public async Task<ActionResult<Speaker>> GetSpeaker (int id) {
-      var speaker = await _context.Speakers.FindAsync (id);
+      var speaker = await _db.Speakers.FindAsync (id);
 
       if (speaker == null) {
         return NotFound ();
@@ -42,10 +42,10 @@ namespace ConferencePlanner.Controllers {
         return BadRequest ();
       }
 
-      _context.Entry (speaker).State = EntityState.Modified;
+      _db.Entry (speaker).State = EntityState.Modified;
 
       try {
-        await _context.SaveChangesAsync ();
+        await _db.SaveChangesAsync ();
       } catch (DbUpdateConcurrencyException) {
         if (!SpeakerExists (id)) {
           return NotFound ();
@@ -60,8 +60,8 @@ namespace ConferencePlanner.Controllers {
     // POST: api/Speakers
     [HttpPost]
     public async Task<ActionResult<Speaker>> PostSpeaker (Speaker speaker) {
-      _context.Speakers.Add (speaker);
-      await _context.SaveChangesAsync ();
+      _db.Speakers.Add (speaker);
+      await _db.SaveChangesAsync ();
 
       return CreatedAtAction ("GetSpeaker", new { id = speaker.ID }, speaker);
     }
@@ -69,19 +69,19 @@ namespace ConferencePlanner.Controllers {
     // DELETE: api/Speakers/5
     [HttpDelete ("{id}")]
     public async Task<ActionResult<Speaker>> DeleteSpeaker (int id) {
-      var speaker = await _context.Speakers.FindAsync (id);
+      var speaker = await _db.Speakers.FindAsync (id);
       if (speaker == null) {
         return NotFound ();
       }
 
-      _context.Speakers.Remove (speaker);
-      await _context.SaveChangesAsync ();
+      _db.Speakers.Remove (speaker);
+      await _db.SaveChangesAsync ();
 
       return speaker;
     }
 
     private bool SpeakerExists (int id) {
-      return _context.Speakers.Any (e => e.ID == id);
+      return _db.Speakers.Any (e => e.ID == id);
     }
   }
 }
